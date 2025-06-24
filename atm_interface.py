@@ -3,7 +3,7 @@ from datetime import datetime
 
 filename = "account.txt"
 
-# Load PIN and Balance from File (or use defaults)
+# Load PIN and Balance from File
 try:
     with open(filename, "r") as file:
         pin_code = file.readline().strip()
@@ -12,7 +12,7 @@ except FileNotFoundError:
     pin_code = "1234"
     balance = 1000.0
 
-# Step 1: PIN Verification
+# PIN Verification
 authenticated = False
 attempts = 3
 
@@ -113,5 +113,4 @@ else:
             else:
                 print("Invalid choice. Please try again.")
 
-    # Run the ATM
     main_menu()
